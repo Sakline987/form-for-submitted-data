@@ -1,0 +1,23 @@
+form {
+    padding-top: 100px;
+    width: 100px;
+    margin: auto;
+}
+
+form input[type=text],
+form input[type=email] {
+    display: block;
+    margin-bottom: 6px;
+    height: 35px;
+    width: 300px;
+}
+
+h2 {
+    height: 35px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+
+
+}
