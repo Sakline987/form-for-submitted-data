@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     echo "<br>";
     echo $_POST ['age'];
 } else {
-    echo "Your Data is Empty";
+    echo "Your Data is Empty, please input your data";
 }
 
 
