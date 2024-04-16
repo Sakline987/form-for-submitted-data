@@ -2,13 +2,6 @@
 <?php 
 
 
-// if(isset($_POST['submit']) && $_SERVER['REQUEST_METHOD'] == 'POST' ) {
-//     echo $_POST ['name'];
-//     echo $_POST ['emali'];
-//     echo $_POST ['phone'];
-//     echo $_POST ['age'];
-    
-// }
 
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -23,6 +16,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     echo "Your Data is Empty";
 }
 
+
+
+// if(isset($_POST['submit']) && $_SERVER['REQUEST_METHOD'] == 'POST' ) {
+//     echo $_POST ['name'];
+//     echo $_POST ['emali'];
+//     echo $_POST ['phone'];
+//     echo $_POST ['age'];
+    
+// }
 
 ?>
 
@@ -45,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <input type="email" name="emali" placeholder="Your Email address">
         <input type="text" name="phone" placeholder ="Your Phone Number">
         <input type="text" name="age" placeholder ="Your age">
-        <input type="submit" value="Submit">
+        <input type="submit" name="Submit">
     </form>
 </body>
 </html>
