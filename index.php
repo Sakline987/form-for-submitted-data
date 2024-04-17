@@ -3,18 +3,14 @@
 
 
 
-
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    echo $_POST ['name']; 
-    echo "<br>";
-    echo $_POST ['emali'];
-    echo "<br>";
-    echo $_POST ['phone'];
-    echo "<br>";
-    echo $_POST ['age'];
-} else {
-    echo "Your Data is Empty";
-}
+ 
+// $connection = new mysqli("localhost","root","","first_website");
+// if ($connection -> connect_error) {
+//    echo "Failed to connect to MySQL: " . $connection -> connect_error;
+//    exit();
+//  }else {
+//    echo "your connection is ready to use";
+// }
 
 
 
@@ -25,6 +21,27 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 //     echo $_POST ['age'];
     
 // }
+
+
+
+$conn  = new mysqli("localhost","root","","first_website");
+
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $name = $_POST ['name']; 
+    
+    $email = $_POST ['emali'];
+   
+    $phone = $_POST ['phone'];
+  
+    $area = $_POST ['area'];
+}
+
+$sql = "INSERT INTO Student_info (Student_Name,Email,Phone,Area) VALUES (?,?,?,?)";
+$data = $conn->prepare($sql);
+$data -> bind_param("ssss",$name, $email, $phone, $area);
+$data-> execute() ;
+
+
 
 ?>
 
@@ -46,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <input  type="text" name="name" placeholder="Your Name">
         <input type="email" name="emali" placeholder="Your Email address">
         <input type="text" name="phone" placeholder ="Your Phone Number">
-        <input type="text" name="age" placeholder ="Your age">
+        <input type="text" name="area" placeholder ="Your Location">
         <input type="submit" name="Submit">
     </form>
 </body>
