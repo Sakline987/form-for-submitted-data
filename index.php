@@ -36,10 +36,16 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $area = $_POST ['area'];
 }
 
+// $sql = "INSERT INTO Student_info (Student_Name,Email,Phone,Area) VALUES ('$name', '$email', '$phone', '$area')";
+// $conn->query($sql); 
+
+
 $sql = "INSERT INTO Student_info (Student_Name,Email,Phone,Area) VALUES (?,?,?,?)";
 $data = $conn->prepare($sql);
-$data -> bind_param("ssss",$name, $email, $phone, $area);
-$data-> execute() ;
+$data -> bind_param("ssss",$name ,$email, $phone , $area);
+$data -> execute();
+
+
 
 
 
@@ -64,7 +70,7 @@ $data-> execute() ;
         <input type="email" name="emali" placeholder="Your Email address">
         <input type="text" name="phone" placeholder ="Your Phone Number">
         <input type="text" name="area" placeholder ="Your Location">
-        <input type="submit" name="Submit">
+        <input type="submit" value="submit" name="submit">
     </form>
 </body>
 </html>
